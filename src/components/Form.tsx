@@ -16,8 +16,8 @@ const Form = () => {
     setLoading(true);
 
     try {
-      const response = await makeApiRequest(url, length, language);
-      setSummary(response.summary);
+      const { htmlContent } = await makeApiRequest(url, length, language);
+      setSummary(htmlContent);
     } catch (error) {
       setError('Failed to fetch the summary. Please try again.');
     }
